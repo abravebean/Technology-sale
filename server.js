@@ -16,8 +16,8 @@ app.use(methodOverride("_method"))
 app.use(express.urlencoded({extended: true}))
 
 //BUY
-app.patch('/:id', (req, res)=>{
-  Product.update({_id: req.params.id}, {$inc: {qty: -1}},
+app.patch('/product/:id', (req, res)=>{
+  Product.update({_id: req.params.id}, {$inc: {quantity: -1}},
 (error, updatedCount)=>{res.redirect('/product/');
   });
 });
@@ -34,7 +34,7 @@ app.get('/product/new', (req, res) => {
 })
 
 //DELETE
-app.delete('/:id', (req, res)=>{
+app.delete('/product/:id', (req, res)=>{
     Product.findByIdAndRemove(req.params.id, (err,data)=>{
         res.redirect('/product');
       });
@@ -64,11 +64,12 @@ app.post('/product', (req, res) => {
       })
     })
 //EDIT
-app.get('/:id/edit', (req,res)=>{
+app.get('/product/:id/edit', (req,res)=>{
+
   Product.findById(req.params.id, (err, foundProduct)=>{
     res.render(
       'edit.ejs',
-      {product: foundProduct,id: [req.params.id]
+      {product: foundProduct, id: [req.params.id]
     });
   });
 });

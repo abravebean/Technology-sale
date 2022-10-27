@@ -12,6 +12,13 @@ img {
     padding: 3px;
     border: 4px solid black;
   }
+  .image-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
   button:hover {
     color:rgb(0, 195, 255);
   }

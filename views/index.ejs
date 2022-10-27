@@ -10,7 +10,9 @@
 </head>
 <body>
     <nav> 
-        <a href= "/product/new">Customize Product</a>
+      <a href="/product" class="nav">Choose Your Tech</a> <span class="nav"> | </span>
+      <a href= "/product/new">Customize Product</a>
+  
 
     </nav>
     <!-- Display Products -->
@@ -29,9 +31,11 @@
             <br/>
               In Stock: <%= product[i].quantity; %><br/>
               Cost: $<%= product[i].price; %><br/>
-            
+             id: <%= product[i].id; %><br/>
             </div>
-            <a href="/product/<%=product.id%>/edit">Edit</a>
+            <button>
+              <a href="/product/<%=product[i].id%>/edit">Edit</a>
+          </button>
           </li>
         <% } %>
       </ul>

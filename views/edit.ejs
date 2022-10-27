@@ -7,11 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+  <!-- Header -->
     <h1>Edit Tech</h1>   
     <a href="/product" class="nav">Choose Your Tech</a> <span class="nav"> | </span>
-    <a href="/product/new" class="nav">Submit New Techonology</a>
+    <a href= "/product/new">Customize Product</a>
 
 
+    <form action="/product/<%=product.id;%>?_method=DELETE" method="POST">
+      <input type="submit"  class="submit" value="DELETE"/>
+    </form><br/>
 
 
       <!-- edit  -->
@@ -20,9 +24,13 @@
         Description:<br/><input type="text" name="description" value="<%=product.description%>"><br/>
         Price:<br/><input type="text" name="price" value="<%=product.price%>"><br/>
         Quantity:<br/><input type="text" name="qty" value="<%=product.qty%>"><br/>
+        Id:<br/><input type="text" name="qty" value="<%=product.id%>"><br/>
+        Image Hyperlink:<br/><input type="text" name="img" value="<%=product.img%>"><br/>
         <input type="submit"  class="submit" value="Make the Tech"><br/>
         <a href="/product/<%=product.id%>/">Back to Home Page</a>
       </form>
-
+      <div class="image-container">
+        <img class="edit-img" src="<%=product.img%>" alt="<%=product.name%>">
+      </div>
 </body>
 </html>
