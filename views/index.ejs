@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/header.ejs") %>
+<head>
+  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics</title>
+</head>
+<body>
+    <nav> 
+        <a href= "/product/new">Add a Product</a>
+
+    </nav>
+    <!-- Display Products -->
+    <div class="flexcontainer">
+      <ul>
+        <% for (let i=0; i<product.length; i++) { %>
+          <li>
+            <a href="/products/<%=product[i].id%>">
+      
+            <div class="product-content">
+              <%= product[i].name; %><br/><br/>
+              <div class="description">
+                <%= product[i].description; %><br/>
+              </div>
+              <img class="indexImg" src="<%=product[i].img%>" alt="<%= product[i].name; %>"></img></a><br/>
+              In Stock: <%= product[i].quantity; %><br/>
+              Price: $<%= product[i].price; %><br/>
+              <a href="/product/<%=product._id %>/edit">Edit</a>
+            </div>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+    <!-- Delete -->
+    <form action="/product/<%=product.id;%>?_method=DELETE" method="POST">
+      <input type="submit"  class="submit" value="DELETE"/>
+    </form><br/>
+</body>
+</html>

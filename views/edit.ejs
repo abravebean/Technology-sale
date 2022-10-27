@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Tech</h1>   
+    <a href="/product" class="nav">Choose Your Tech</a> <span class="nav"> | </span>
+    <a href="/product/new" class="nav">Submit New Techonology</a>
+
+
+
+
+      <!-- edit  -->
+      <form action="/products/<%=product.id%>?_method=PUT" method="POST">
+        Name:<br/><input type="text" name="name" value="<%=product.name%>"><br/>
+        Description:<br/><input type="text" name="description" value="<%=product.description%>"><br/>
+        Price:<br/><input type="text" name="price" value="<%=product.price%>"><br/>
+        Quantity:<br/><input type="text" name="qty" value="<%=product.qty%>"><br/>
+        <input type="submit"  class="submit" value="Make the Tech"><br/>
+        <a href="/product/<%=product.id%>/">Back to Home Page</a>
+      </form>
+
+</body>
+</html>
