@@ -15,6 +15,12 @@ app.use(methodOverride("_method"))
 //MIDDLEWARE 
 app.use(express.urlencoded({extended: true}))
 
+//BUY
+app.patch('/:id', (req, res)=>{
+  Product.update({_id: req.params.id}, {$inc: {qty: -1}},
+(error, updatedCount)=>{res.redirect('/product/');
+  });
+});
 //INDEX
 app.get('/product/',(req,res)=>{
     Product.find({},(error,allProduct)=> {  
@@ -58,13 +64,20 @@ app.post('/product', (req, res) => {
       })
     })
 //EDIT
-app.get("/product/:id/edit", (req, res) => {
-    Product.findById(req.params.id, (error, product) => {
-      res.render("edit.ejs", {
-        product: product,id: [req.params.id]
-      })
-    })
-  })
+app.get('/:id/edit', (req,res)=>{
+  Product.findById(req.params.id, (err, foundProduct)=>{
+    res.render(
+      'edit.ejs',
+      {product: foundProduct,id: [req.params.id]
+    });
+  });
+});
+  //PUT
+app.put('/:id', (req,res)=>{
+  Product.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updateModel)=>
+  {
+    res.redirect('/product');});
+});
 
 // SHOW
 app.get("/product/:id", (req, res) => {

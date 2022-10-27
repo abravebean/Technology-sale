@@ -16,12 +16,11 @@ img {
     color:rgb(0, 195, 255);
   }
   .submit:hover {
-    color:rgb(0, 195, 255);
+    color: rgb(0, 195, 255);
   }
   .flexcontainer {
     display: flex;
     display: -webkit-flex;
-  
     -webkit-flex-direction: row;
     flex-direction: row;
     align-items: center;
@@ -30,3 +29,12 @@ img {
     -webkit-align-items: center;
     justify-content: center;
  }
+ footer {
+  background: rgb(17, 2, 104);
+  margin-bottom: 0;
+  height: 25px;
+  color: rgb(35, 20, 172);
+  padding-bottom: 40px;
+  padding-top: 15px;
+  margin-top: 30px;
+}

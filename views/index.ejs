@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav> 
-        <a href= "/product/new">Add a Product</a>
+        <a href= "/product/new">Customize Product</a>
 
     </nav>
     <!-- Display Products -->
@@ -18,25 +18,28 @@
       <ul>
         <% for (let i=0; i<product.length; i++) { %>
           <li>
-            <a href="/products/<%=product[i].id%>">
+            <a href="/product/<%=product[i].id%>"></a>
       
             <div class="product-content">
-              <%= product[i].name; %><br/><br/>
+              <%= product[i].name; %><br/>
               <div class="description">
                 <%= product[i].description; %><br/>
               </div>
-              <img class="indexImg" src="<%=product[i].img%>" alt="<%= product[i].name; %>"></img></a><br/>
+              <img class="indexImg" src="<%=product[i].img%>" alt="<%= product[i].name; %>"></img>
+            <br/>
               In Stock: <%= product[i].quantity; %><br/>
-              Price: $<%= product[i].price; %><br/>
-              <a href="/product/<%=product._id %>/edit">Edit</a>
+              Cost: $<%= product[i].price; %><br/>
+            
             </div>
+            <a href="/product/<%=product.id%>/edit">Edit</a>
           </li>
         <% } %>
       </ul>
     </div>
     <!-- Delete -->
-    <form action="/product/<%=product.id;%>?_method=DELETE" method="POST">
-      <input type="submit"  class="submit" value="DELETE"/>
-    </form><br/>
+ 
+    <footer> 
+
+    </footer>
 </body>
 </html>
