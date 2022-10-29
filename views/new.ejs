@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="/partials/css/style.css">
+		<link rel="stylesheet" href="/css/style.css">
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>List of Tech</title>
 	</head>
-	<body>
+	<body id="new">
 		<h1>Tech Laboratory</h1>
-		<a href="/product" class="nav">Choose Your Tech</a> <span class="nav"> | </span>
-		<a href= "/product/new">Customize Product</a>
+		<div class="nav"> 
+		<a href="/product" >Choose Your Tech</a> <span class="nav"> | </span>
+		<a href= "/product/new">Customize Product</a> |	<a href="/product">Homepage</a>
+	</div>
 		<form action="/product" method="POST">
 			Name: <input type="text" name="name" required/><br />
 			Price: <input type="text" name="price" /><br />
 			Quantity: <input type="text" name="quantity" /><br />
             Image link:<input type="text" name="img"><br/>
-			<input type="submit" name="" value="Add Pet" />
+			<input type="submit" name="submit" value="Submit" />
 		</form>
         
 
 
-		<a href="/product">Homepage</a>
+	
 	
 	</body>
 </html>

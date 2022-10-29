@@ -6,33 +6,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electronics</title>
+    <title>Space Digital</title>
 </head>
-<body>
-    <nav> 
-      <a href="/product" class="nav">Choose Your Tech</a> <span class="nav"> | </span>
-      <a href= "/product/new">Customize Product</a>
-  
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+  </style>
 
-    </nav>
+<body>
     <!-- Display Products -->
-    <div class="flexcontainer">
+    <div class="flex-container">
       <ul>
         <% for (let i=0; i<product.length; i++) { %>
           <li>
             <a href="/product/<%=product[i].id%>"></a>
-      
             <div class="product-content">
-              <%= product[i].name; %><br/>
-              <div class="description">
-                <%= product[i].description; %><br/>
-              </div>
+              Name: <%= product[i].name; %><br/>
               <img class="indexImg" src="<%=product[i].img%>" alt="<%= product[i].name; %>"></img>
-            <br/>
+              <br/>
+              <div class="description">
+              Description:<%= product[i].description; %><br/>
+              </div>
+         
               In Stock: <%= product[i].quantity; %><br/>
               Cost: $<%= product[i].price; %><br/>
-             id: <%= product[i].id; %><br/>
+              <!-- id -->
+             <!-- id: <%= product[i].id; %><br/> -->
             </div>
+            <form action="/product/<%=product.id;%>?_method=PATCH" method="POST">
+              <input type="submit" class="submit" value="Buy"><br/>
+              
+            </form>
             <button>
               <a href="/product/<%=product[i].id%>/edit">Edit</a>
           </button>
