@@ -33,7 +33,7 @@ app.get('/product/',(req,res)=>{
 //NEW
 app.get('/product/new', (req, res) => {
     res.render('new.ejs')
-    res.redirect('/product');
+  
 })
 
 //DELETE
@@ -46,7 +46,7 @@ app.delete('/product/:id', (req, res)=>{
 
 //UPDATE
 app.put("/product/:id", (req, res) => {
-   
+   console.log(req.body)
     Product.findByIdAndUpdate(
       req.params.id,
       req.body,
@@ -68,7 +68,7 @@ app.post('/product', (req, res) => {
     })
 //EDIT
 app.get('/product/:id/edit', (req,res)=>{
-  
+
   Product.findById(req.params.id, (err, foundProduct)=>{
     res.render(
       'edit.ejs',

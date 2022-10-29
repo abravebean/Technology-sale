@@ -7,23 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/product">Homepage</a>
-    <button>
-        <a href="/product/<%=product._id%>/edit">Edit</a><br/>
-    </button>
+
 
     <nav>
-        <a href="/product">Back to product Index</a>
-      </nav>
       name: <%= product.name%>
       <br />
+      </nav>
+      <img class="edit-img" src="<%=product.img%>" alt="<%=product.name%>">
+      <br />
+      In Stock: <%= product.quantity; %><br/>
       price: <%= product.price %>
     <!-- action -->
       <form action="/product/<%=product.id;%>?_method=DELETE" method="POST">
         <input type="submit"  class="submit" value="DELETE"/>
-      </form><br/>
+      </form>
       <form action="/product/<%=product.id;%>?_method=PATCH" method="POST">
         <input type="submit" class="submit" value="BUY"><br/>
       </form>
+      <a href="/product">Back to Index</a>
 </body>
 </html>

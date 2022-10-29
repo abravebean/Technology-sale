@@ -8,25 +8,14 @@
 </head>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-<body>
+<body >
   <!-- Header -->
     <h1>Edit Tech</h1>   
     <a href="/product" class="nav">Choose Your Tech</a> <span class="nav"> | </span>
     <a href= "/product/new">Customize Product</a>|
     <a href="/product/<%=product.id%>/">Back to Home Page</a>
 
-    <form action="/product/<%=product.id;%>?_method=DELETE" method="POST">
-      <input type="submit"  class="submit" value="DELETE"/>
-      <style>
-        .material-symbols-outlined {
-          font-variation-settings:
-          'FILL' 0,
-          'wght' 400,
-          'GRAD' 0,
-          'opsz' 48
-        }
-        </style>
-    </form><br/>
+   
 
 
       <!-- edit  -->
@@ -34,11 +23,15 @@
         Name:<br/><input type="text" name="name" value="<%=product.name%>"><br/>
         Description:<br/><input type="text" name="description" value="<%=product.description%>"><br/>
         Price:<br/><input type="text" name="price" value="<%=product.price%>"><br/>
-        Quantity:<br/><input type="text" name="qty" value="<%=product.qty%>"><br/>
+        Quantity:<br/><input type="text" name="quantity" value="<%=product.quantity%>"><br/>
         Id:<br/><input type="text" name="qty" value="<%=product.id%>"><br/>
         Image Link:<br/><input type="text" name="img" value="<%=product.img%>"><br/>
         <input type="submit"  class="submit" value="Make the Tech"><br/>
       </form>
+      <form action="/product/<%=product.id;%>?_method=DELETE" method="POST">
+        <input type="submit"  class="submit" value="DELETE"/>
+  
+      </form><br/>
       <div class="image-container">
         <img class="edit-img" src="<%=product.img%>" alt="<%=product.name%>">
       </div>

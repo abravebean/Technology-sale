@@ -7,9 +7,13 @@
     background: rgb(95, 95, 95);
     
   }
+  h2{
+    background: rgb(125, 168, 248);
+    color:rgb(141, 132, 132);
+  }
   
 img {
-    max-width: 292px;
+    max-width: 892px;
     padding: 3px;
     border: 4px solid black;
   }
@@ -62,6 +66,7 @@ li {
   flex-wrap: wrap;
   align-items: center;
   flex-direction: row; 
+  justify-content:space-between;
 }
 
 .nav {

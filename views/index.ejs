@@ -32,10 +32,10 @@
               <!-- id -->
              <!-- id: <%= product[i].id; %><br/> -->
             </div>
-            <form action="/product/<%=product.id;%>?_method=PATCH" method="POST">
-              <input type="submit" class="submit" value="Buy"><br/>
-              
+            <form action="/product/<%=product[i].id%>?_method=PATCH" method="POST">
+              <input type="submit" class="submit" value="BUY"><br/>
             </form>
+            <br/>
             <button>
               <a href="/product/<%=product[i].id%>/edit">Edit</a>
           </button>
@@ -46,7 +46,6 @@
     <!-- Delete -->
  
     <footer> 
-
     </footer>
 </body>
 </html>
